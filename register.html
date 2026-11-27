@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register - Right To Play Lagos</title>
+<style>
+body{font-family:Arial;background:#f4f4f4;margin:0;padding:15px}
+.box{max-width:600px;background:#fff;margin:auto;padding:20px;border-radius:12px}
+h1{color:#d21f26;text-align:center} h3{background:#d21f26;color:#fff;padding:8px;border-radius:6px}
+input,select,textarea{width:100%;padding:11px;margin:6px 0;border:1px solid #ccc;border-radius:8px}
+button{width:100%;background:#25D366;color:#fff;border:0;padding:15px;font-size:18px;font-weight:bold;border-radius:10px}
+.pay{background:#fff3cd;padding:12px;border-radius:8px}
+</style></head><body><div class="box">
+<h1>RIGHT TO PLAY LAGOS</h1><p style="text-align:center">PLAYER REGISTRATION FORM</p>
+<h3>1. PLAYER INFORMATION</h3>
+<input id="surname" placeholder="Surname *">
+<input id="firstname" placeholder="First Name *">
+<input id="dob" type="date">
+<select id="gender"><option>Gender</option><option>Male</option><option>Female</option></select>
+<input id="age" placeholder="Age">
+<input id="position" placeholder="Position e.g Striker">
+<select id="foot"><option>Preferred Foot</option><option>Right</option><option>Left</option><option>Both</option></select>
+<input id="school" placeholder="School">
+<input id="class" placeholder="Class">
+<h3>2. PARENT / GUARDIAN</h3>
+<textarea id="address" placeholder="Home Address"></textarea>
+<input id="playerphone" placeholder="Player Phone / WhatsApp">
+<input id="parentname" placeholder="Parent / Guardian Name *">
+<input id="parentphone" placeholder="Parent Phone / WhatsApp *">
+<input id="parentemail" placeholder="Parent Email">
+<h3>3. MEDICAL</h3>
+<input id="blood" placeholder="Blood Group">
+<input id="genotype" placeholder="Genotype">
+<input id="allergy" placeholder="Allergy / Asthma / Medical Condition">
+<input id="emergency" placeholder="Emergency Contact Name & Number">
+<h3>4. ACADEMY DETAILS</h3>
+<select id="category"><option>Category</option><option>U-13</option><option>U-15</option><option>U-17</option></select>
+<select id="jersey"><option>Jersey Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<input id="prevclub" placeholder="Previous Club">
+<input id="heard" placeholder="How did you hear about us?">
+<h3>5. DECLARATION</h3>
+<p><input type="checkbox" id="agree" style="width:auto"> I agree to abide by rules of Right To Play Lagos</p>
+<h3>6. PAYMENT - N20,000</h3>
+<div class="pay"><b>Account: 2310101701<br>Bank: UBA Bank<br>Name: Kingsley Ubong David</b><br>Use player's name as narration.</div><br>
+<button onclick="send()">SUBMIT & SEND TO WHATSAPP</button>
+</div>
+<script>
+function send(){
+if(!document.getElementById('agree').checked){alert('Please tick I agree');return}
+let t="*NEW REGISTRATION - RIGHT TO PLAY*%0A";
+let f=['surname','firstname','dob','gender','age','position','foot','school','class','address','playerphone','parentname','parentphone','parentemail','blood','genotype','allergy','emergency','category','jersey','prevclub','heard'];
+f.forEach(id=>{let v=document.getElementById(id).value; if(v) t+=id.toUpperCase()+": "+v+"%0A"});
+window.open("https://wa.me/2348068377049?text="+t,"_blank");
+}
+</script></body></html>
